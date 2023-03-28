@@ -25,4 +25,15 @@ public class MilitaryOffice {
         }
     }
 
+    public int countConscripts(PersonRegistry personRegistry, String cityName) {
+        int counter = 0;
+        PersonRegistry sortedPersonRegistry = sortFitForMilitaryService(personRegistry.getPersons());
+        for (Person person : sortedPersonRegistry.getPersons()) {
+            if (person.getAddress().getCity().equalsIgnoreCase(cityName)) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
 }
