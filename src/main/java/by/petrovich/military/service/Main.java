@@ -9,10 +9,10 @@ import java.util.List;
  * Main
  */
 public class Main {
-    private static MilitaryOffice militaryOffice = new MilitaryOffice();
+    private static final MilitaryOffice militaryOffice = new MilitaryOffice();
 
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<Person>();
+        List<Person> persons = new ArrayList<>();
         persons.add(new Person("Alexandr", 27, Gender.MALE, new Address("Russian", "Moscow")));
         persons.add(new Person("Victor", 25, Gender.MALE, new Address("Canada", "Montreal")));
         persons.add(new Person("Evgeniy", 23, Gender.MALE, new Address("Belarus", "Minsk")));
