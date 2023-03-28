@@ -24,8 +24,8 @@ public class Main {
         persons.add(new Person("Gertruda", 36, Gender.FEMALE, new Address("Belarus", "Minsk")));
         PersonRegistry personRegistry = militaryOffice.sortFitForMilitaryService(persons);
         militaryOffice.printFitForMilitaryService(personRegistry);
-        System.out.println("Number of conscripts: " + militaryOffice.countConscriptsByCity(personRegistry, "Minsk"));
-        System.out.println("Number of conscripts: " + militaryOffice.countConscriptsByName(personRegistry, "Alexandr"));
-        System.out.println("Number of conscripts: " + militaryOffice.countConscriptsByAgeRange(personRegistry, 25,27));
+        System.out.println("Number of conscripts with city name Minsk: \n" + militaryOffice.countConscriptsByCity(personRegistry, "Minsk"));
+        System.out.println("Number of conscripts with name Alexandr: \n" + militaryOffice.countConscriptsByName(personRegistry, "Alexandr"));
+        System.out.println("Number of conscripts with age range 25 to 27: \n" + militaryOffice.countConscriptsByAgeRange(personRegistry, 25, 27));
     }
 }

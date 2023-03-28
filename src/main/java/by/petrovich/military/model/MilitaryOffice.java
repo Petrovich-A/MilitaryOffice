@@ -19,43 +19,43 @@ public class MilitaryOffice {
     }
 
     public void printFitForMilitaryService(PersonRegistry personRegistry) {
-        System.out.println("Persons Fit For Military Service:");
+        System.out.println("Persons fit for military service:");
         for (Person person : personRegistry.getPersons()) {
             System.out.println(person);
         }
     }
 
-    public int countConscriptsByCity(PersonRegistry personRegistry, String cityName) {
-        int counter = 0;
+    public PersonRegistry countConscriptsByCity(PersonRegistry personRegistry, String cityName) {
         PersonRegistry sortedPersonRegistry = sortFitForMilitaryService(personRegistry.getPersons());
+        List<Person> personsWithRequiredCityName = new ArrayList<>();
         for (Person person : sortedPersonRegistry.getPersons()) {
             if (person.getAddress().getCity().equalsIgnoreCase(cityName)) {
-                counter++;
+                personsWithRequiredCityName.add(person);
             }
         }
-        return counter;
+        return new PersonRegistry(personsWithRequiredCityName);
     }
 
-    public int countConscriptsByName(PersonRegistry personRegistry, String personName) {
-        int counter = 0;
+    public PersonRegistry countConscriptsByName(PersonRegistry personRegistry, String personName) {
         PersonRegistry sortedPersonRegistry = sortFitForMilitaryService(personRegistry.getPersons());
+        List<Person> personsWithRequiredPersonName = new ArrayList<>();
         for (Person person : sortedPersonRegistry.getPersons()) {
             if (person.getName().equalsIgnoreCase(personName)) {
-                counter++;
+                personsWithRequiredPersonName.add(person);
             }
         }
-        return counter;
+        return new PersonRegistry(personsWithRequiredPersonName);
     }
 
-    public int countConscriptsByAgeRange(PersonRegistry personRegistry, int rangeStart, int rangeEnd) {
-        int counter = 0;
+    public PersonRegistry countConscriptsByAgeRange(PersonRegistry personRegistry, int rangeStart, int rangeEnd) {
         PersonRegistry sortedPersonRegistry = sortFitForMilitaryService(personRegistry.getPersons());
+        List<Person> personsWithRequiredPersonName = new ArrayList<>();
         for (Person person : sortedPersonRegistry.getPersons()) {
             if (person.getAge() >= rangeStart & person.getAge() <= rangeEnd) {
-                counter++;
+                personsWithRequiredPersonName.add(person);
             }
         }
-        return counter;
+        return new PersonRegistry(personsWithRequiredPersonName);
     }
 
 }
