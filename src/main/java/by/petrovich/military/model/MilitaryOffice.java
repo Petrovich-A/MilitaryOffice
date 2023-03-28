@@ -47,4 +47,15 @@ public class MilitaryOffice {
         return counter;
     }
 
+    public int countConscriptsByAgeRange(PersonRegistry personRegistry, int rangeStart, int rangeEnd) {
+        int counter = 0;
+        PersonRegistry sortedPersonRegistry = sortFitForMilitaryService(personRegistry.getPersons());
+        for (Person person : sortedPersonRegistry.getPersons()) {
+            if (person.getAge() >= rangeStart & person.getAge() <= rangeEnd) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
 }
